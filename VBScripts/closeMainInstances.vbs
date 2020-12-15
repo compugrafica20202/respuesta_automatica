@@ -9,6 +9,7 @@ Set excelApp = GetObject(,"Excel.Application")
 Set inventorApp = GetObject(,"Inventor.Application")
 
 excelApp.Quit
+inventorApp.Quit
 
 ' Retorna True si existio un error y False si se ejecuta correctamente
 If Err.Number <> 0 Then

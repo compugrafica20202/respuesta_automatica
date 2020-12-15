@@ -22,7 +22,7 @@ if __name__ == "__main__":
     script_path = ".\\VBScripts\\closeMainInstances.vbs"
     error = os.system("cscript " + script_path)
     if error != 0:
-        print("No existian instancias")
+        print("No existian instancias de Inventor y/o Excel")
 
     # Warm up
 
@@ -40,12 +40,14 @@ if __name__ == "__main__":
     if error != 0:
         raise Exception("No se pudo ejectutar: " + script_path)
 
-    while True:
+    reenter = True
+    while reenter:
         try:
             # Busca la primera de las cotizaciones no procesadas
             cotizacion_en_cola = cotizaciones_tb.find({"ha_sido_revisado": False})[0]
             # Si encuentra una cotizacion sin procesar no arrojara la excepcion y se puede proceder
-            procesar_cotizacion(cotizacion_en_cola)
+            procesar_cotizacion(cotizacion_en_cola. precios_tb)
+
         except KeyboardInterrupt:  # Cuando se desea detener el programa
             break  # Termine el loop
 
@@ -55,6 +57,8 @@ if __name__ == "__main__":
 
         except Exception as e:  # No se ha pensado en que ninguna otra excepcion pueda ocurrir
             print(e)
+
+        reenter = False
 
     # Se eliminan las instancias
     script_path = ".\\VBScripts\\closeMainInstances.vbs"

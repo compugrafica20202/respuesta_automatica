@@ -27,7 +27,7 @@ Set excelApp = GetObject(, "Excel.Application")
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B1").Value = Ancho
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B2").Value = Altura
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B3").Value = Profundidad
-excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B4").Value = IdCotizacion
+excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B5").Value = IdCotizacion
 excelApp.Workbooks(NombreLibro).Activate
 excelApp.Run NombreMacro
 
