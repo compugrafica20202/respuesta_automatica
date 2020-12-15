@@ -35,8 +35,8 @@ if __name__ == "__main__":
     # Se abren los exceles
     script_path = ".\\VBScripts\\initExcels.vbs"
     error = os.system("cscript " + script_path +
-                      " " + PATH_INV_EXCEL +
-                      " " + PATH_CODO_EXCEL)
+                      " " + PATH_INV_EXCEL) # +
+                      #" " + PATH_CODO_EXCEL)
     if error != 0:
         raise Exception("No se pudo ejectutar: " + script_path)
 
