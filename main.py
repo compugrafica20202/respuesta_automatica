@@ -46,7 +46,7 @@ if __name__ == "__main__":
             # Busca la primera de las cotizaciones no procesadas
             cotizacion_en_cola = cotizaciones_tb.find({"ha_sido_revisado": False})[0]
             # Si encuentra una cotizacion sin procesar no arrojara la excepcion y se puede proceder
-            procesar_cotizacion(cotizacion_en_cola, precios_tb)
+            procesar_cotizacion(cotizacion_en_cola)
 
         except KeyboardInterrupt:  # Cuando se desea detener el programa
             break  # Termine el loop
