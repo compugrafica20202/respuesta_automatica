@@ -31,7 +31,6 @@ def send_cotizacion(cotizacion):
 
     for path in file_paths:
         # Buscar ruta de los archivos a adjuntar y seleccionar cuales archivos
-        path = 'cotizacion.pdf'
         # file_name = 'cotizacion.pdf'
         file_name = path.split("\\")[-1]
 
