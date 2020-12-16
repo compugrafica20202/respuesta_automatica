@@ -15,24 +15,24 @@ Dim NombreMacro
 Set Args = WScript.Arguments
 
 ' Pasar los parametros a variables
-NombreLibro = Args(0)
-NombreHoja = Args(1)
-IdCotizacion = Args(2)
-Lineas = CStr(Args(3))
-JaulasxLinea = CStr(Args(4))
-Niveles = CStr(Args(5))
-Aves = CStr(Args(6))
-LineasEnfrentadas = CStr(Args(7))
-NombreMacro = Args(8)
+'NombreLibro = Args(0)
+'NombreHoja = Args(1)
+'IdCotizacion = Args(2)
+'Lineas = CStr(Args(3))
+'JaulasxLinea = CStr(Args(4))
+'Niveles = CStr(Args(5))
+'Aves = CStr(Args(6))
+'LineasEnfrentadas = CStr(Args(7))
+'NombreMacro = Args(8)
 
 ' La aplicacion de excel es abierta en initMainInstances.vbs
 Set excelApp = GetObject(, "Excel.Application")
 excelApp.Workbooks("ParametrosAlimentadora").Activate
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B7").Value = Lineas
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B8").Value = JaulasxLinea
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B9").Value = Niveles
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B10").Value = LineasEnfrentadas
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("A11").Value = IdCotizacion
+excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B7").Value = "HOLA" 'Lineas
+excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B8").Value = "HOLA" 'JaulasxLinea
+excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B9").Value = "Hola" 'Niveles
+excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("B10").Value = "Holaa" 'LineasEnfrentadas
+excelApp.Workbooks("ParametrosAlimentadora").Worksheets("Sheet1").Range("A11").Value = "Hola" 'IdCotizacion
 
 ' excelApp.Run NombreMacro
 
