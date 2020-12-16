@@ -4,7 +4,7 @@ la aplicacion en la maquina virtual
 """
 
 PATH_INV_EXCEL = "C:\\Users\\compgraf\\Desktop\\Param.xlsm"
-PATH_CODO_EXCEL = "G:\\Unidades compartidas\\Computacion_Grafica_2020-II\\Modelacion_Codornices\\Alimentador_de_codornices\\Parametros\\ParametrosAlimentadora.xlsm"
+PATH_CODO_EXCEL = r"G:\Unidades compartidas\Computacion_Grafica_2020-II\Modelacion_Codornices\Alimentador_de_codornices\Parametros\ParametrosAlimentadora.xlsm"
 
 HOJA_PARAM_INV = "Hoja1"
 HOJA_PARAM_CODO = "Sheet1"
