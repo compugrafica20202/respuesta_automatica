@@ -1,6 +1,6 @@
 import os
 from variables import NOMBRE_INV_EXCEL, NOMBRE_CODO_EXCEL, HOJA_PARAM_INV, HOJA_PARAM_CODO
-from variables import NOMBRE_MACRO_INV_EXCEL, NOMBRE_MACRO_CODO_EXCEL
+from variables import NOMBRE_MACRO_INV_EXCEL, NOMBRE_MACRO_CODO_EXCEL, PATH_CODO_EXCEL
 
 
 def procesar_cotizacion(cotizacion_dict):
@@ -66,7 +66,7 @@ def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int,
     """
     script_path = ".\\VBScripts\\runInventorCodo.vbs"
     print("Ejecutando: " + "cscript " + script_path +
-          " " + NOMBRE_CODO_EXCEL +
+          " " + PATH_CODO_EXCEL +
           " " + HOJA_PARAM_CODO +
           " " + str(_id) +
           " " + str(cantidad_lineas) +
@@ -76,7 +76,7 @@ def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int,
           " " + str(int(lineas_enfrentadas)) +
           " " + NOMBRE_MACRO_CODO_EXCEL)
     error = os.system("cscript " + script_path +
-                      " " + NOMBRE_CODO_EXCEL +
+                      " " + PATH_CODO_EXCEL +
                       " " + HOJA_PARAM_CODO +
                       " " + str(_id) +
                       " " + str(cantidad_lineas) +
