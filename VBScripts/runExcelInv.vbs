@@ -37,5 +37,6 @@ If Err.Number <> 0 Then
     WScript.Echo Err.Source
     WScript.Quit True
 Else
+    WScript.Echo "runExcelInv.vbs ejecutado exitosamente"
     WScript.Quit False
 End If

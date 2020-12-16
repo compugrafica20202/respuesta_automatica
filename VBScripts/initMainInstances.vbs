@@ -20,5 +20,6 @@ If Err.Number <> 0 Then
     WScript.Echo "Error en initExcels: " & Err.Description
     WScript.Quit True
 Else
+    WScript.Echo "initMainInstances.vbs ejecutado exitosamente"
     WScript.Quit False
 End If

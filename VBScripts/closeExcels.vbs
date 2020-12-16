@@ -21,5 +21,6 @@ If Err.Number <> 0 Then
     WScript.Echo "Error en closeExcels: " & Err.Description
     WScript.Quit True
 Else
+    WScript.Echo "closeExcels.vbs ejecutado exitosamente"
     WScript.Quit False
 End If
