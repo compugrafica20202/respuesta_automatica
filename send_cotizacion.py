@@ -25,7 +25,7 @@ def send_cotizacion(cotizacion):
     msg['Subject'] = "Respuesta Solicitud de Cotización"
 
     if cotizacion["es_invernadero"]:
-        file_paths = [COTIZACIONES_PATH + "\\" + str(cotizacion["_id"]) + "\\modelo3d.pdf"]
+        file_paths = [COTIZACIONES_PATH + "\\" + str(cotizacion["_id"]) + "\\modelo3d.pdf\""]
     else:
         file_paths = [COTIZACIONES_PATH + "\\" + str(cotizacion["_id"]) + "\\Alimentadora_de_codornices.pdf"]
 
