@@ -28,12 +28,13 @@ NombreMacro = Args(8)
 ' La aplicacion de excel es abierta en initMainInstances.vbs
 Set excelApp = GetObject(, "Excel.Application")
 
-excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B7").Value = Lineas
-excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B8").Value = JaulasxLinea
-excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B9").Value = Niveles
-excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B10").Value = LineasEnfrentadas
-excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("A11").Value = IdCotizacion
-excelApp.Workbooks(NombreLibro).Activate
+excelApp.Workbooks("ParametrosAlimentadora.xlsm").Worksheets("Sheet1").Range("B7").Value = "HOLA"
+' excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B7").Value = Lineas
+' excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B8").Value = JaulasxLinea
+' excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B9").Value = Niveles
+' excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B10").Value = LineasEnfrentadas
+' excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("A11").Value = IdCotizacion
+' excelApp.Workbooks(NombreLibro).Activate
 
 ' excelApp.Run NombreMacro
 
