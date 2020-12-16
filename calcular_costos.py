@@ -10,6 +10,7 @@ def calcular_costos(cotizacion, precios_tb):
         calcular_costos_invernadero(precios_tb, cotizacion)
     else:
         calcular_costos_codornices(precios_tb, cotizacion)
+    print("Cotizacion generada exitosamente")
 
 
 def calcular_costos_invernadero(precios_tb, **kwargs):

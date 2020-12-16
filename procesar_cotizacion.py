@@ -16,6 +16,8 @@ def procesar_cotizacion(cotizacion_dict):
         _procesar_invernadero(**cotizacion_dict)
     else:
         _procesar_alimentadora(**cotizacion_dict)
+    
+    print("Modelado procesado exitosamente")
 
 
 def _procesar_invernadero(profundidad: int, altura: int, ancho: int, _id, **kwargs):
