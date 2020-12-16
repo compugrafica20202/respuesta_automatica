@@ -24,5 +24,7 @@ Esto mostrará la versión del administrador de paquetes pip.
 2. Debes instalar los paquetes empleados en el desarrollo, para esto:
 
 > pip install pymongo 
+
 > pip install dnspython
+
 > pip install pandas
