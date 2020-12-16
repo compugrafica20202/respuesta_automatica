@@ -16,4 +16,5 @@ COTIZACIONES_PATH = "G:\\Unidades compartidas\\Computacion_Grafica_2020-II\\Coti
 EXCEL_COTIZACION_PATH = "C:\\Users\\compgraf\\Desktop\\Formato_Cotizacion.xlsx"
 
 NOMBRE_INV_EXCEL = PATH_INV_EXCEL.split("\\")[-1]
-NOMBRE_CODO_EXCEL = PATH_CODO_EXCEL.split("\\")[-1].replace("\"")
+# NOMBRE_CODO_EXCEL = PATH_CODO_EXCEL.split("\\")[-1].replace("\"")
+NOMBRE_CODO_EXCEL = "ParametrosAlimentadora.xlsm"
