@@ -4,6 +4,7 @@ from time import sleep
 import os
 from variables import PATH_INV_EXCEL, PATH_CODO_EXCEL
 from calcular_costos import calcular_costos
+from send_cotizacion import send_cotizacion
 
 if __name__ == "__main__":
 
@@ -50,7 +51,7 @@ if __name__ == "__main__":
             # Si se llega a este punto se han generado los archivos de pdf y exceles para calcular los costos
             # y enviar la cotizacion
             calcular_costos(cotizacion_en_cola, precios_tb)
-
+            send_cotizacion(cotizacion_en_cola)
             # Llegado a este punto se esperaria el procesamiento ha sido efectuado correctamente
             # Entonces, finalmente se actualiza el estado de revision de la cotizacion en la base de datos
             cotizacion_en_cola["ha_sido_revisado"] = True

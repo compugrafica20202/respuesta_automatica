@@ -24,6 +24,7 @@ Aves = CStr(Args(6))
 LineasEnfrentadas = CStr(Args(7))
 
 ' La aplicacion de excel es abierta en initMainInstances.vbs
+Set excelApp = GetObject(, "Excel.Application")
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B7").Value = Lineas
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B8").Value = JaulasxLinea
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B9").Value = Niveles

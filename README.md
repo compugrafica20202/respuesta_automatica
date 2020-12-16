@@ -28,3 +28,5 @@ Esto mostrará la versión del administrador de paquetes pip.
 > pip install dnspython
 
 > pip install pandas
+
+> pip install xlrd
