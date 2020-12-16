@@ -54,7 +54,7 @@ def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int,
     :param int cantidad_aves: Cantidad de aves
     :param bool lineas_enfrentadas: Si la lineas son enfrentadas
     """
-    script_path = ".\\VBScripts\\runInventorCodor.vbs"
+    script_path = ".\\VBScripts\\runInventorCodo.vbs"
     error = os.system("cscript " + script_path +
                       " " + NOMBRE_CODO_EXCEL +
                       " " + HOJA_PARAM_CODO +
