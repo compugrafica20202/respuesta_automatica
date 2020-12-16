@@ -15,7 +15,7 @@ def calcular_costos(cotizacion, precios_tb):
 
 
 def calcular_costos_invernadero(precios_tb, _id, **kwargs):
-    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsx")
+    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsx\"")
 
     # Num de fila, Referencia, Cantidad
     datos = pd.DataFrame(file, columns=["Reference", "Lenght[m/m^2/QTY]"])
@@ -50,6 +50,8 @@ def calcular_costos_invernadero(precios_tb, _id, **kwargs):
     if error != 0:
         raise Exception("En calcular_costos.py, calcular_costos_invernadero: \n"
                         "No se pudo ejectutar: " + script_path)
+    
+    print("Cotazacion evaluada en:" + str(acumulado))
 
 
 def calcular_costos_codornices(precios_tb, _id, **kwargs):
