@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
         except Exception as e:  # No se ha pensado en que ninguna otra excepcion pueda ocurrir
             print(e)
-            break
+            sleep(20)  # Esperar 20 segundos antes de volver a consultar para no saturar la base de datos
 
     # Se eliminan las instancias
     script_path = ".\\VBScripts\\closeMainInstances.vbs"
