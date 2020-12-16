@@ -1,6 +1,6 @@
 import os
 from variables import NOMBRE_INV_EXCEL, NOMBRE_CODO_EXCEL, HOJA_PARAM_INV, HOJA_PARAM_CODO
-from variables import NOMBRE_MACRO_INV_EXCEL
+from variables import NOMBRE_MACRO_INV_EXCEL, NOMBRE_MACRO_CODO_EXCEL
 
 
 def procesar_cotizacion(cotizacion_dict):
@@ -16,7 +16,7 @@ def procesar_cotizacion(cotizacion_dict):
         _procesar_invernadero(**cotizacion_dict)
     else:
         _procesar_alimentadora(**cotizacion_dict)
-    
+
     print("Modelado procesado exitosamente")
 
 
@@ -65,7 +65,8 @@ def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int,
                       " " + str(cantidad_jaulas_por_linea) +
                       " " + str(cantidad_niveles) +
                       " " + str(cantidad_aves) +
-                      " " + str(int(lineas_enfrentadas)))
+                      " " + str(int(lineas_enfrentadas)) +
+                      " " + NOMBRE_MACRO_CODO_EXCEL)
     if error != 0:
         raise Exception("En procesar_cotizacion.py, _procesar_alimentadora: \n"
                         "No se pudo ejectutar: " + script_path)

@@ -6,23 +6,22 @@ from email import encoders
 import smtplib
 from variables import COTIZACIONES_PATH
 
-def send_cotizacion(cotizacion):
 
+def send_cotizacion(cotizacion):
     # Crear el objeto del mensaje
     msg = MIMEMultipart()
 
     # Escribir el cuerpo del mensaje
     body = "Apreciado cliente, adjunto envio respuesta de su cotización, si tiene alguna inquietud, " \
-            "no dude en contactarse con nosotros" \
-            "\n" \
-            "\n" \
-            "QuailHouse"
+           "no dude en contactarse con nosotros" \
+           "\n" \
+           "\n" \
+           "QuailHouse"
 
     # Configurar los parámetros adicionales del objeto y correo
     password = "compu20graph20"
     msg['From'] = "compugraficaresponse@gmail.com"
-    # msg['To'] = cotizacion["correo"]
-    msg["To"] = "eaarciniegasj@gmail.com"
+    msg['To'] = cotizacion["correo"]
     msg['Subject'] = "Respuesta Solicitud de Cotización"
 
     if cotizacion["es_invernadero"]:
