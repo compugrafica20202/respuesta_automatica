@@ -27,12 +27,12 @@ Set Args = WScript.Arguments
 
 ' La aplicacion de excel es abierta en initMainInstances.vbs
 Set excelApp = GetObject(, "Excel.Application")
-excelApp.Workbooks("ParametrosAlimentadora").Activate
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets(Args(1)).Range("B7").Value = "HOLA" 'Lineas
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets(Args(1)).Range("B8").Value = "HOLA" 'JaulasxLinea
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets(Args(1)).Range("B9").Value = "Hola" 'Niveles
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets(Args(1)).Range("B10").Value = "Holaa" 'LineasEnfrentadas
-excelApp.Workbooks("ParametrosAlimentadora").Worksheets(Args(1)).Range("A11").Value = "Hola" 'IdCotizacion
+excelApp.Workbooks(Args(0)).Activate
+excelApp.Workbooks(Args(0)).Worksheets(Args(1)).Range("B7").Value = "HOLA" 'Lineas
+excelApp.Workbooks(Args(0)).Worksheets(Args(1)).Range("B8").Value = "HOLA" 'JaulasxLinea
+excelApp.Workbooks(Args(0)).Worksheets(Args(1)).Range("B9").Value = "Hola" 'Niveles
+excelApp.Workbooks(Args(0)).Worksheets(Args(1)).Range("B10").Value = "Holaa" 'LineasEnfrentadas
+excelApp.Workbooks(Args(0)).Worksheets(Args(1)).Range("A11").Value = "Hola" 'IdCotizacion
 
 ' excelApp.Run NombreMacro
 

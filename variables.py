@@ -7,7 +7,7 @@ PATH_INV_EXCEL = "C:\\Users\\compgraf\\Desktop\\Param.xlsm"
 PATH_CODO_EXCEL = "C:\\Users\\compgraf\\Desktop\\ParametrosAlimentadora.xlsm"
 
 HOJA_PARAM_INV = "Hoja1"
-HOJA_PARAM_CODO = "Hoja1"
+HOJA_PARAM_CODO = "Sheet1"
 
 NOMBRE_MACRO_INV_EXCEL = "Invernaderos"
 NOMBRE_MACRO_CODO_EXCEL = "runmacrocodornices"
