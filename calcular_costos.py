@@ -38,19 +38,18 @@ def calcular_costos_invernadero(precios_tb, _id, **kwargs):
           " " + str(kwargs["departamento"]) +
           " " + str(acumulado))
     # Ruta, IdCotizacion, Cliente, Empresa, NIT, Email, City, State, Total
-    # error = os.system("cscript " + script_path +
-    #                   " " + EXCEL_COTIZACION_PATH +
-    #                   " " + str(kwargs["_id"]) +
-    #                   " " + str(kwargs["nombre_cliente"]) +
-    #                   " " + str(kwargs["es_empresa"]) +
-    #                   " " + str(kwargs["cc_o_nit"]) +
-    #                   " " + str(kwargs["correo"]) +
-    #                   " " + str(kwargs["municipio"]) +
-    #                   " " + str(kwargs["departamento"]) +
-    #                   " " + str(acumulado))
-    # if error != 0:
-    #     raise Exception("En calcular_costos.py, calcular_costos_invernadero: \n"
-    #                     "No se pudo ejectutar: " + script_path)
+    error = os.system("cscript " + script_path +
+                      " " + str(kwargs["_id"]) +
+                      " " + str(kwargs["nombre_cliente"]) +
+                      " " + str(kwargs["es_empresa"]) +
+                      " " + str(kwargs["cc_o_nit"]) +
+                      " " + str(kwargs["correo"]) +
+                      " " + str(kwargs["municipio"]) +
+                      " " + str(kwargs["departamento"]) +
+                      " " + str(acumulado))
+    if error != 0:
+        raise Exception("En calcular_costos.py, calcular_costos_invernadero: \n"
+                        "No se pudo ejectutar: " + script_path)
 
 
 def calcular_costos_codornices(precios_tb, _id, **kwargs):
