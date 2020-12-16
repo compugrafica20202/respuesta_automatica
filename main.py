@@ -50,7 +50,7 @@ if __name__ == "__main__":
             procesar_cotizacion(cotizacion_en_cola)
             # Si se llega a este punto se han generado los archivos de pdf y exceles para calcular los costos
             # y enviar la cotizacion
-            calcular_costos(cotizacion_en_cola, precios_tb)
+            # calcular_costos(cotizacion_en_cola, precios_tb)
             send_cotizacion(cotizacion_en_cola)
             # Llegado a este punto se esperaria el procesamiento ha sido efectuado correctamente
             # Entonces, finalmente se actualiza el estado de revision de la cotizacion en la base de datos
