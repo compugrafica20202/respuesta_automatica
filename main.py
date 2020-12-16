@@ -3,6 +3,7 @@ from procesar_cotizacion import procesar_cotizacion
 from time import sleep
 import os
 from variables import PATH_INV_EXCEL, PATH_CODO_EXCEL
+from calcular_costos import calcular_costos
 
 if __name__ == "__main__":
 
@@ -40,14 +41,22 @@ if __name__ == "__main__":
     if error != 0:
         raise Exception("No se pudo ejectutar: " + script_path)
 
-    reenter = True
-    while reenter:
+    while True:
         try:
             # Busca la primera de las cotizaciones no procesadas
             cotizacion_en_cola = cotizaciones_tb.find({"ha_sido_revisado": False})[0]
             # Si encuentra una cotizacion sin procesar no arrojara la excepcion y se puede proceder
             procesar_cotizacion(cotizacion_en_cola)
+            # Si se llega a este punto se han generado los archivos de pdf y exceles para calcular los costos
+            # y enviar la cotizacion
+            calcular_costos(cotizacion_en_cola, precios_tb)
 
+            # Llegado a este punto se esperaria el procesamiento ha sido efectuado correctamente
+            # Entonces, finalmente se actualiza el estado de revision de la cotizacion en la base de datos
+            cotizacion_en_cola["ha_sido_revisado"] = True
+            cotizaciones_tb.update_one({"_id": cotizacion_en_cola["_id"]},
+                                       {"$set": {"ha_sido_revisado": True}})
+            print("COTIZACION EXITOSA!")
         except KeyboardInterrupt:  # Cuando se desea detener el programa
             break  # Termine el loop
 
@@ -57,8 +66,7 @@ if __name__ == "__main__":
 
         except Exception as e:  # No se ha pensado en que ninguna otra excepcion pueda ocurrir
             print(e)
-
-        reenter = False
+            break
 
     # Se eliminan las instancias
     script_path = ".\\VBScripts\\closeMainInstances.vbs"

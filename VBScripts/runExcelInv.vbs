@@ -22,7 +22,7 @@ Altura = CStr(Args(4))
 Ancho = CStr(Args(5))
 NombreMacro = Args(6)
 
-' La aplicacion de excel es abierta en initExcel.vbs
+' La aplicacion de excel es abierta en initMainInstances.vbs
 Set excelApp = GetObject(, "Excel.Application")
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B1").Value = Ancho
 excelApp.Workbooks(NombreLibro).Worksheets(NombreHoja).Range("B2").Value = Altura
@@ -33,7 +33,7 @@ excelApp.Run NombreMacro
 
 ' Retorna True si existio un error y False si se ejecuta correctamente
 If Err.Number <> 0 Then
-    WScript.Echo "Error en modificarExcelInv: " & Err.Description 
+    WScript.Echo "Error en runExcelInv: " & Err.Description 
     WScript.Echo Err.Source
     WScript.Quit True
 Else

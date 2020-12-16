@@ -25,3 +25,4 @@ Esto mostrará la versión del administrador de paquetes pip.
 
 > pip install pymongo 
 > pip install dnspython
+> pip install pandas

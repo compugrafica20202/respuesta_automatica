@@ -1,6 +1,6 @@
 import os
 from variables import NOMBRE_INV_EXCEL, NOMBRE_CODO_EXCEL, HOJA_PARAM_INV, HOJA_PARAM_CODO
-from variables import NOMBRE_MACRO_INV_EXCEL, NOMBRE_MACRO_CODO_EXCEL
+from variables import NOMBRE_MACRO_INV_EXCEL
 
 
 def procesar_cotizacion(cotizacion_dict):
@@ -39,11 +39,12 @@ def _procesar_invernadero(profundidad: int, altura: int, ancho: int, _id, **kwar
                       " " + str(ancho) +
                       " " + NOMBRE_MACRO_INV_EXCEL)
     if error != 0:
-        raise Exception("No se pudo ejectutar: " + script_path)
+        raise Exception("En procesar_cotizacion.py, _procesar_invernadero: \n"
+                        "No se pudo ejectutar: " + script_path)
 
 
 def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int, cantidad_niveles: int,
-                           cantidad_aves: int, lineas_enfrentadas: bool, **kwargs):
+                           cantidad_aves: int, lineas_enfrentadas: bool, _id, **kwargs):
     """
     Esta funcion efectua los cambios en el excel de referencia y ejecuta el macro correspondiente para la generacion
     del modelado de la ALIMENTADORA DE CODORNICES.
@@ -53,4 +54,16 @@ def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int,
     :param int cantidad_aves: Cantidad de aves
     :param bool lineas_enfrentadas: Si la lineas son enfrentadas
     """
-    print("aves:" + str(cantidad_aves))
+    script_path = ".\\VBScripts\\runExcelInv.vbs"
+    error = os.system("cscript " + script_path +
+                      " " + NOMBRE_CODO_EXCEL +
+                      " " + HOJA_PARAM_CODO +
+                      " " + str(_id) +
+                      " " + str(cantidad_lineas) +
+                      " " + str(cantidad_jaulas_por_linea) +
+                      " " + str(cantidad_niveles) +
+                      " " + str(cantidad_aves) +
+                      " " + str(int(lineas_enfrentadas)))
+    if error != 0:
+        raise Exception("En procesar_cotizacion.py, _procesar_alimentadora: \n"
+                        "No se pudo ejectutar: " + script_path)
