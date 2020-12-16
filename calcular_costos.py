@@ -27,7 +27,16 @@ def calcular_costos_invernadero(precios_tb, _id, **kwargs):
         acumulado += cantidad * precio_cantidad
 
     script_path = ".\\VBScripts\\formato_cotizacion.vbs"
-
+    print("Ejecutando: " + "cscript " + script_path +
+          " " + EXCEL_COTIZACION_PATH +
+          " " + str(kwargs["_id"]) +
+          " " + str(kwargs["nombre_cliente"]) +
+          " " + str(kwargs["es_empresa"]) +
+          " " + str(kwargs["cc_o_nit"]) +
+          " " + str(kwargs["correo"]) +
+          " " + str(kwargs["municipio"]) +
+          " " + str(kwargs["departamento"]) +
+          " " + str(acumulado))
     # Ruta, IdCotizacion, Cliente, Empresa, NIT, Email, City, State, Total
     # error = os.system("cscript " + script_path +
     #                   " " + EXCEL_COTIZACION_PATH +
@@ -57,6 +66,16 @@ def calcular_costos_codornices(precios_tb, _id, **kwargs):
         acumulado += cantidad * precio_cantidad
 
     script_path = ".\\VBScripts\\formato_cotizacion.vbs"
+    print("Ejecutando :" + "cscript " + script_path +
+          " " + EXCEL_COTIZACION_PATH +
+          " " + str(kwargs["_id"]) +
+          " " + str(kwargs["nombre_cliente"]) +
+          " " + str(kwargs["es_empresa"]) +
+          " " + str(kwargs["cc_o_nit"]) +
+          " " + str(kwargs["correo"]) +
+          " " + str(kwargs["municipio"]) +
+          " " + str(kwargs["departamento"]) +
+          " " + str(acumulado))
 
     # Ruta, IdCotizacion, Cliente, Empresa, NIT, Email, City, State, Total
     # error = os.system("cscript " + script_path +

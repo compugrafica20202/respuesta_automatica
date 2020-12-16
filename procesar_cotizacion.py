@@ -32,6 +32,14 @@ def _procesar_invernadero(profundidad: int, altura: int, ancho: int, _id, **kwar
         True -> Modelo 2
     """
     script_path = ".\\VBScripts\\runExcelInv.vbs"
+    print("Ejecutando :" + "cscript " + script_path +
+          " " + NOMBRE_INV_EXCEL +
+          " " + HOJA_PARAM_INV +
+          " " + str(_id) +
+          " " + str(profundidad * 10) +
+          " " + str(altura * 10) +
+          " " + str(ancho * 10) +
+          " " + NOMBRE_MACRO_INV_EXCEL)
     error = os.system("cscript " + script_path +
                       " " + NOMBRE_INV_EXCEL +
                       " " + HOJA_PARAM_INV +
@@ -57,6 +65,16 @@ def _procesar_alimentadora(cantidad_lineas: int, cantidad_jaulas_por_linea: int,
     :param bool lineas_enfrentadas: Si la lineas son enfrentadas
     """
     script_path = ".\\VBScripts\\runInventorCodo.vbs"
+    print("Ejecutando: " + "cscript " + script_path +
+          " " + NOMBRE_CODO_EXCEL +
+          " " + HOJA_PARAM_CODO +
+          " " + str(_id) +
+          " " + str(cantidad_lineas) +
+          " " + str(cantidad_jaulas_por_linea) +
+          " " + str(cantidad_niveles) +
+          " " + str(cantidad_aves) +
+          " " + str(int(lineas_enfrentadas)) +
+          " " + NOMBRE_MACRO_CODO_EXCEL)
     error = os.system("cscript " + script_path +
                       " " + NOMBRE_CODO_EXCEL +
                       " " + HOJA_PARAM_CODO +
