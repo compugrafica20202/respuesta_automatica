@@ -33,6 +33,9 @@ if __name__ == "__main__":
     error = os.system("cscript " + script_path)
     if error != 0:
         raise Exception("No se pudo ejectutar: " + script_path)
+    
+    print("Esperando 6 segundos para abrir inventor...")
+    sleep(6)
 
     # Se abren los exceles
     script_path = ".\\VBScripts\\initExcels.vbs"
