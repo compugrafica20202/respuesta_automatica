@@ -34,9 +34,9 @@ def _procesar_invernadero(profundidad: int, altura: int, ancho: int, _id, **kwar
                       " " + NOMBRE_INV_EXCEL +
                       " " + HOJA_PARAM_INV +
                       " " + str(_id) +
-                      " " + str(profundidad) +
-                      " " + str(altura) +
-                      " " + str(ancho) +
+                      " " + str(profundidad * 10) +
+                      " " + str(altura * 10) +
+                      " " + str(ancho * 10) +
                       " " + NOMBRE_MACRO_INV_EXCEL)
     if error != 0:
         raise Exception("En procesar_cotizacion.py, _procesar_invernadero: \n"
