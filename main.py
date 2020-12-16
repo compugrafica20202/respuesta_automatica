@@ -62,12 +62,13 @@ if __name__ == "__main__":
             break  # Termine el loop
 
         except IndexError:  # Cuando no encuentra cotizacion sin procesar, arrojado en la definicion cotizacion_en_cola
-            sleep(20)  # Esperar 20 segundos antes de volver a consultar para no saturar la base de datos
+            print("No hay cotizaciones pendientes. Esperando 60 segundos...")
+            sleep(60)  # Esperar 60 segundos antes de volver a consultar para no saturar la base de datos
             pass  # Siga
 
         except Exception as e:  # No se ha pensado en que ninguna otra excepcion pueda ocurrir
             print(e)
-            sleep(20)  # Esperar 20 segundos antes de volver a consultar para no saturar la base de datos
+            sleep(60)  # Esperar 60 segundos antes de volver a consultar para no saturar la base de datos
 
     # Se eliminan las instancias
     script_path = ".\\VBScripts\\closeMainInstances.vbs"

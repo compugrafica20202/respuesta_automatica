@@ -8,12 +8,12 @@ Dim excelApp
 Dim inventorApp
 
 Set excelApp = CreateObject("Excel.Application") ' Se crea la instancia global de excel
-excelApp.Visible = True 'Importante sea False para mejorar el rendimiento
+excelApp.Visible = False 'Importante sea False para mejorar el rendimiento
 excelApp.DisplayAlerts = False 'Importante para que no hayan interrupciones
 excelApp.Workbooks.Add 
 
 Set inventorApp = CreateObject("Inventor.Application")
-inventorApp.Visible = True
+inventorApp.Visible = False
 
 ' Retorna True si existio un error y False si se ejecuta correctamente
 If Err.Number <> 0 Then
