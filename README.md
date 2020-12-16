@@ -30,3 +30,5 @@ Esto mostrará la versión del administrador de paquetes pip.
 > pip install pandas
 
 > pip install xlrd
+
+> pip install openpyxl

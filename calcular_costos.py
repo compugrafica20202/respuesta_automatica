@@ -45,7 +45,7 @@ def calcular_costos_invernadero(precios_tb, _id, **kwargs):
 
 
 def calcular_costos_codornices(precios_tb, _id, **kwargs):
-    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsm")
+    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsm", engine="openpyxl")
 
     # Num de fila, Referencia, Cantidad
     datos = pd.DataFrame(file, columns=["Reference", "valor"])
