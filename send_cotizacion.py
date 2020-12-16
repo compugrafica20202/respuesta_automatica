@@ -12,7 +12,7 @@ def send_cotizacion(cotizacion):
     msg = MIMEMultipart()
 
     # Escribir el cuerpo del mensaje
-    body = "Apreciado cliente, adjunto envio respuesta de su cotización, si tiene alguna inquietud, " \
+    body = "Apreciado cliente " + cotizacion["nombre_cliente"] + ", adjunto envio respuesta de su cotización, si tiene alguna inquietud, " \
            "no dude en contactarse con nosotros" \
            "\n" \
            "\n" \
