@@ -15,7 +15,7 @@ def calcular_costos(cotizacion, precios_tb):
 
 
 def calcular_costos_invernadero(precios_tb, _id, **kwargs):
-    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsx")
+    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xls")
 
     # Num de fila, Referencia, Cantidad
     datos = pd.DataFrame(file, columns=["Reference", "Lenght[m/m^2/QTY]"])
@@ -45,7 +45,7 @@ def calcular_costos_invernadero(precios_tb, _id, **kwargs):
 
 
 def calcular_costos_codornices(precios_tb, _id, **kwargs):
-    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsx")
+    file = pd.read_excel(COTIZACIONES_PATH + "\\" + str(_id) + "\\Listado.xlsm")
 
     # Num de fila, Referencia, Cantidad
     datos = pd.DataFrame(file, columns=["Reference", "valor"])
